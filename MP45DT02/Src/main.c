@@ -143,7 +143,7 @@ int main(void) {
 		pcm_square += (leaky_AMP_buffer / 1000) * leaky_AMP_buffer;
 
 		if (pcmCount == 1000) { //wait...
-			if(maxAmp >= 65750){
+			if(maxAmp >= 64000){
 				HAL_GPIO_TogglePin(GPIOD, 1<<12);
 				int d[1] = {1};
 				sprintf(uart_temp_display_buffer, d, sizeof(d)); //save new format for OUTPUT...

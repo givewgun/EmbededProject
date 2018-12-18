@@ -3805,7 +3805,7 @@ LOAD c:/users/givew/onedrive/desktop/ac6/ac6/systemworkbench/plugins/fr.ac6.mcu.
                 0x000006d0       0x22 c:/users/givew/onedrive/desktop/ac6/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crtn.o
 OUTPUT(MP45DT02.elf elf32-littlearm)
 
-.debug_line     0x00000000     0x7e72
+.debug_line     0x00000000     0x7eea
  .debug_line    0x00000000       0xae Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/gcc/startup_stm32f407xx.o
  .debug_line    0x000000ae      0x872 Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.o
  .debug_line    0x00000920      0x9aa Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
@@ -3816,9 +3816,9 @@ OUTPUT(MP45DT02.elf elf32-littlearm)
  .debug_line    0x00004061      0xb52 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
  .debug_line    0x00004bb3      0x8f0 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o
  .debug_line    0x000054a3      0xf9a Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o
- .debug_line    0x0000643d      0x985 Src/main.o
- .debug_line    0x00006dc2      0x894 Src/stm32f4xx_hal_msp.o
- .debug_line    0x00007656      0x81c Src/stm32f4xx_it.o
+ .debug_line    0x0000643d      0x9fd Src/main.o
+ .debug_line    0x00006e3a      0x894 Src/stm32f4xx_hal_msp.o
+ .debug_line    0x000076ce      0x81c Src/stm32f4xx_it.o
 
 .debug_info     0x00000000     0xec16
  .debug_info    0x00000000       0x22 Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/gcc/startup_stm32f407xx.o
@@ -3878,7 +3878,7 @@ OUTPUT(MP45DT02.elf elf32-littlearm)
  .debug_aranges
                 0x00000578       0x20 Src/stm32f4xx_it.o
 
-.debug_str      0x00000000    0x6b4e7
+.debug_str      0x00000000    0x6b525
  .debug_str     0x00000000       0x85 Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/gcc/startup_stm32f407xx.o
  .debug_str     0x00000085    0x69161 Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.o
                               0x69468 (size before relaxing)
@@ -3898,11 +3898,11 @@ OUTPUT(MP45DT02.elf elf32-littlearm)
                               0x69502 (size before relaxing)
  .debug_str     0x0006ad99      0x54e Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o
                               0x69b61 (size before relaxing)
- .debug_str     0x0006b2e7      0x1ad Src/main.o
-                              0x6a2b9 (size before relaxing)
- .debug_str     0x0006b494       0x1b Src/stm32f4xx_hal_msp.o
+ .debug_str     0x0006b2e7      0x1eb Src/main.o
+                              0x6a2d1 (size before relaxing)
+ .debug_str     0x0006b4d2       0x1b Src/stm32f4xx_hal_msp.o
                               0x69ee9 (size before relaxing)
- .debug_str     0x0006b4af       0x38 Src/stm32f4xx_it.o
+ .debug_str     0x0006b4ed       0x38 Src/stm32f4xx_it.o
                               0x692b9 (size before relaxing)
 
 .debug_ranges   0x00000000      0x7d8

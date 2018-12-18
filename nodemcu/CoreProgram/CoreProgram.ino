@@ -5,9 +5,10 @@
 // set pin numbers:
 //#define D0 16  // USER LED Wake
 #define ledPin  D6        // the number of the LED pin
-
-const char* ssid     = "Po";
-const char* password = "123456789";
+//Po 123456789
+//Gunizuka fenr5717
+const char* ssid     = "Gunizuka";
+const char* password = "fenr5717";
 
 #define APPID   "ClapClapLight"
 #define KEY     "QtHoJZqFaNkiJaC"
