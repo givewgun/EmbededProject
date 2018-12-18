@@ -143,12 +143,12 @@ int main(void) {
 		pcm_square += (leaky_AMP_buffer / 1000) * leaky_AMP_buffer;
 
 		if (pcmCount == 1000) { //wait...
-			if(maxAmp >= 64000){
-				HAL_GPIO_TogglePin(GPIOD, 1<<12);
+			if(maxAmp >= 65000){
+				//HAL_GPIO_TogglePin(GPIOD, 1<<12);
 				int d[1] = {1};
 				sprintf(uart_temp_display_buffer, d, sizeof(d)); //save new format for OUTPUT...
 				HAL_UART_Transmit(&huart2, (uint8_t*)uart_temp_display_buffer, strlen(uart_temp_display_buffer), 100);
-				HAL_Delay(100);
+				//HAL_Delay(100);
 
 			}
 			//"L : %d\n\r"
