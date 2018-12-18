@@ -140,9 +140,9 @@ int main(void) {
 		if (maxAmp < leaky_AMP_buffer) // save new maxAmp...
 			maxAmp = leaky_AMP_buffer;
 
-		pcm_square += (leaky_AMP_buffer / 1000) * leaky_AMP_buffer;
+		pcm_square += (leaky_AMP_buffer / 500) * leaky_AMP_buffer;
 
-		if (pcmCount == 1000) { //wait...
+		if (pcmCount == 500) { //wait...
 			if(maxAmp >= 65000){
 				//HAL_GPIO_TogglePin(GPIOD, 1<<12);
 				int d[1] = {1};
