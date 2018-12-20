@@ -54,6 +54,15 @@ void onMsghandler(char *topic, uint8_t* msg, unsigned int msglen)
     mode = 0;
     microgear.chat(TargetWeb, "OFF");
   }
+  else if (stateStr == "GET")
+  {
+    if(mode == 0){
+      microgear.chat(TargetWeb, "OFF");
+    }
+    else{
+      microgear.chat(TargetWeb, "ON");
+    }
+  }
 }
 
 void onConnected(char *attribute, uint8_t* msg, unsigned int msglen) 
@@ -116,9 +125,8 @@ void setup()
           else{
             mode = 0;
             digitalWrite(ledPin, LOW);
-            microgear.chat(TargetWeb, "OFF");
+            microgear.chat(TargetWeb, "ON");
           }
-          
         }
         if (isToggle) {
           temp_t = 0;

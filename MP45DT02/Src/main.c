@@ -92,6 +92,7 @@ int main(void) {
 
 	//double pcm_square = 0;
 	float maxAmp = 0;
+	int check = 0;
 
 	/* USER CODE END 1 */
 
@@ -149,13 +150,15 @@ int main(void) {
 		//pcm_square += (leaky_AMP_buffer / 500) * leaky_AMP_buffer;
 
 		if (pcmCount == 500) { //wait...
-			if(maxAmp >= 65000){
+			if(maxAmp >= 65000 && check == 0){
 				//HAL_GPIO_TogglePin(GPIOD, 1<<12);
+				check = 1;
 				int d[1] = {1};
 				sprintf(uart_temp_display_buffer, d, sizeof(d)); //save new format for OUTPUT...
 				HAL_UART_Transmit(&huart2, (uint8_t*)uart_temp_display_buffer, strlen(uart_temp_display_buffer), 100);
 				//HAL_Delay(100);
-
+			} else {
+				check = 0;
 			}
 			//"L : %d\n\r"
 
