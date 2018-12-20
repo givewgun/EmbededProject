@@ -46,7 +46,7 @@ UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
-
+//float test[2];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -90,7 +90,7 @@ int main(void) {
 
 	char uart_temp_display_buffer[100];
 
-	double pcm_square = 0;
+	//double pcm_square = 0;
 	float maxAmp = 0;
 
 	/* USER CODE END 1 */
@@ -107,6 +107,7 @@ int main(void) {
 
 	/* USER CODE BEGIN 2 */
 
+
 	/* USER CODE END 2 */
 
 	/* Infinite loop */
@@ -119,7 +120,9 @@ int main(void) {
 		HAL_I2S_Receive(&hi2s2, PDM_buffer, PDM_BUFFER_SIZE, 1000);
 
 		//calculate...
+
 		for (i = 0; i < PDM_BUFFER_SIZE; i++) {
+			//to start from -8 to 8 (change from only 16 bits to signed number)
 			PCM_value = -PDM_BLOCK_SIZE_BITS / 2;
 			PDM_value = PDM_buffer[i];
 			//count '1' in pdm value
@@ -133,6 +136,9 @@ int main(void) {
 			leaky_PCM_buffer *= LEAKY_KEEP_RATE;
 			leaky_AMP_buffer += absFloat(leaky_PCM_buffer);
 			leaky_AMP_buffer *= LEAKY_KEEP_RATE;
+			//test[0] = leaky_PCM_buffer;
+			//test[1] = leaky_AMP_buffer;
+
 		}
 
 		pcmCount++;
@@ -140,7 +146,7 @@ int main(void) {
 		if (maxAmp < leaky_AMP_buffer) // save new maxAmp...
 			maxAmp = leaky_AMP_buffer;
 
-		pcm_square += (leaky_AMP_buffer / 500) * leaky_AMP_buffer;
+		//pcm_square += (leaky_AMP_buffer / 500) * leaky_AMP_buffer;
 
 		if (pcmCount == 500) { //wait...
 			if(maxAmp >= 65000){
@@ -156,8 +162,10 @@ int main(void) {
 			// output...
 
 			pcmCount = 0;
-			pcm_square = 0;
+			//pcm_square = 0;
 			maxAmp = 0;
+			leaky_PCM_buffer = 0;
+			leaky_AMP_buffer = 0;
 
 		}
 	}
