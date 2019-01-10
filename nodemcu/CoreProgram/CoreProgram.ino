@@ -125,7 +125,7 @@ void setup()
           else{
             mode = 0;
             digitalWrite(ledPin, LOW);
-            microgear.chat(TargetWeb, "ON");
+            microgear.chat(TargetWeb, "OFF");
           }
         }
         if (isToggle) {
